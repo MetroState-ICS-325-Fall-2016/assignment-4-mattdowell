@@ -128,6 +128,9 @@ function validate_form( ) {
     } else {
         $input['drink'] = '';
     }
+    if (! array_key_exists($input['drink'], $GLOBALS['drink'])) {
+        $errors[] = 'Please select a valid drink item.';
+    }
 
     return array($errors, $input);
 }
